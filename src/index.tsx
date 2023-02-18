@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes } from 'react';
 import { Schema } from './types';
 
-export interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface IndexProps extends HTMLAttributes<HTMLDivElement> {
   schema: Schema;
 }
 
@@ -10,7 +10,7 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
 /**
  * A custom Thing component. Neat!
  */
-export const DataDrivenHookForm: FC<Props> = ({ schema }) => {
+export const DataDrivenHookForm: FC<IndexProps> = ({ schema }) => {
   return (
     <form>
       {schema.fields.map(field => {

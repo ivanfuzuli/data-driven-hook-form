@@ -11,7 +11,7 @@ export type Input = {
   /** input name also it will be used as input id */
   name: string;
   /** input props, every thing in this object will be passed the input component as a prop */
-  inputProps: {
+  inputProps?: {
     placeholder?: string;
   };
 };

@@ -26,6 +26,7 @@ Primary.args = {
   schema: {
     fields: [
       {
+        name: 'surname',
         type: 'input',
       },
     ],

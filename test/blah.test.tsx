@@ -1,6 +1,6 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Default as DataDrivenHookForm } from '../stories/Index.stories';
+import { Primary as DataDrivenHookForm } from '../stories/Index.stories';
 
 describe('Thing', () => {
   it('renders without crashing', () => {
