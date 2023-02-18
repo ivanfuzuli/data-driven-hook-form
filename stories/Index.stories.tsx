@@ -1,28 +1,33 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { DataDrivenHookForm, Props } from '../src';
+// Button.stories.ts|tsx
 
-const meta: Meta = {
-  title: 'Welcome',
+import React from 'react';
+
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import { DataDrivenHookForm } from '../src';
+
+export default {
+  /* 👇 The title prop is optional.
+   * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+   * to learn how to generate automatic titles
+   */
+  title: 'Data Driven Hook Form',
   component: DataDrivenHookForm,
-  argTypes: {
-    children: {
-      control: {
-        type: 'text',
+} as ComponentMeta<typeof DataDrivenHookForm>;
+
+//👇 We create a “template” of how args map to rendering
+const Template: ComponentStory<typeof DataDrivenHookForm> = args => (
+  <DataDrivenHookForm {...args} />
+);
+
+export const Primary = Template.bind({});
+
+Primary.args = {
+  schema: {
+    fields: [
+      {
+        type: 'input',
       },
-    },
-  },
-  parameters: {
-    controls: { expanded: true },
+    ],
   },
 };
-
-export default meta;
-
-const Template: Story<Props> = args => <DataDrivenHookForm {...args} />;
-
-// By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
-// https://storybook.js.org/docs/react/workflows/unit-testing
-export const Default = Template.bind({});
-
-Default.args = {};
